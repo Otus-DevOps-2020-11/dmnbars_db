@@ -13,4 +13,4 @@ jobs:
           python -m pip install -r requirements.txt
       - name: run molecule
         run: |
-          molecule test -d podman
+          molecule test
