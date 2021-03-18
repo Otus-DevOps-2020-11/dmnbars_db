@@ -8,21 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          ls -la
-      - run: |
-          cat requirements.txt
-      - run: |
-          python -V
-      - run: |
-          python3 -V
-      - run: |
-          pip -V
-      - run: |
-          python -m pip -V
       - name: install deps
         run: |
-          pip install < requirements.txt
+          python -m pip -r requirements.txt
       - name: run molecule
         run: |
           molecule test
