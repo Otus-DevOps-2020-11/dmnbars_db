@@ -2,7 +2,7 @@
 dependency:
   name: galaxy
 driver:
-  name: vagrant
+  name: podman
 platforms:
   - name: instance
     box: ubuntu/xenial64
