@@ -1,21 +1,24 @@
 ---
 - name: install GPG keys
   apt_key:
-    url: https://www.mongodb.org/static/pgp/server-4.2.asc
+    url: https://www.mongodb.org/static/pgp/server-4.4.asc
     state: present
   tags: install
 
 - name: add apt repository
   apt_repository:
-    repo: "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse"
+    repo: "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.4 multiverse"
     state: present
   tags: install
 
 - name: install mongod
   apt:
     update_cache: true
-    name: mongodb-org
+    name: "{{ item }}"
     state: present
+  loop:
+#    - mongodb-org-server
+    - mongodb-org
   tags: install
 
 - name: enable and start mongod service
