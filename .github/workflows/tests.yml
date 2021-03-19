@@ -9,7 +9,16 @@ jobs:
     env:
       DO_API_TOKEN: ${{ secrets.DO_API_TOKEN }}
     steps:
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '2.7'
       - uses: actions/checkout@v2
+      - run: |
+          python2 -V
+
+      - run: |
+          python -V
+          
       - name: install venv
         run: |
           python2 -m pip install virtualenv
