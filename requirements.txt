@@ -1,7 +1,6 @@
 ansible>=2.4
-molecule>=2.6
-pytest-testinfra>=1.10
+molecule >=3.0,<3.1.0
 python-vagrant>=0.5.15
-molecule-vagrant>=0.6.1
-molecule-docker>=0.2.4
-molecule-digitalocean>=0.1
+dopy>=0.3.2
+molecule-digitalocean @ git+https://github.com/ansible-community/molecule-digitalocean.git@04ac113d7f62092f131e92000960014d0cda50c7
+testinfra==3.4.0

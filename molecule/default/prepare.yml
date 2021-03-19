@@ -3,13 +3,9 @@
   become: true
   hosts: all
   tasks:
-    - name: install deps
-      apt:
-        update_cache: true
-        name: "{{ item }}"
-        state: present
-      loop:
-        - gnupg
-        - apt-transport-https
-        - apt-utils
-        - dbus-user-session
+    - name: Install python for Ansible
+      raw: >-
+        test -e /usr/bin/python ||
+        (apt -y update && apt install -y python3 python3-pip)
+      become: true
+      changed_when: false

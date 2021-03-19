@@ -2,17 +2,12 @@
 dependency:
   name: galaxy
 driver:
-#  name: digitalocea
-  name: docker
-#lint: |
-#  yamllint .
+  name: digitalocean
 platforms:
   - name: instance
-    image: ubuntu:20.04
-    privileged: true
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-#    image_id: ubuntu-16.04-x64
+    region_id: lon1
+    image_id: 72067667
+    size_id: s-1vcpu-1gb
 provisioner:
   name: ansible
   lint:
@@ -23,6 +18,3 @@ verifier:
     name: flake8
   additional_files_or_dirs:
     - tests
-
-
-#pip3 install git+https://github.com/ansible-community/molecule-digitalocean.git

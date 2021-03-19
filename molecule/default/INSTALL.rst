@@ -1,12 +1,11 @@
-*********************************
-Vagrant driver installation guide
-*********************************
+**************************************
+DigitalOcean driver installation guide
+**************************************
 
 Requirements
 ============
 
-* Vagrant
-* Virtualbox, Parallels, VMware Fusion, VMware Workstation or VMware Desktop
+* ``DO_API_KEY`` or ``DO_API_TOKEN`` exposed in your environment
 
 Install
 =======
@@ -20,4 +19,4 @@ widely recommended `'--user' flag`_ when invoking ``pip``.
 
 .. code-block:: bash
 
-    $ pip install 'molecule_vagrant'
+    $ pip install 'molecule[digitalocean]'
