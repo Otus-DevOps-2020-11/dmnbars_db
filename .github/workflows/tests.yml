@@ -10,12 +10,18 @@ jobs:
       DO_API_TOKEN: ${{ secrets.DO_API_TOKEN }}
     steps:
       - uses: actions/checkout@v2
+      - name: install venv
+        run: |
+          python2 -m pip install virtualenv
       - name: venv
         run: |
           python2 -m virtualenv venv
+      - name: using venv
+        run: |
+          source venv/bin/activate
       - name: install deps
         run: |
-          source venv/bin/activate && python2 -m pip install -r requirements.txt
+          python2 -m pip install -r requirements.txt
       - name: run molecule
         run: |
-          source venv/bin/activate && molecule test
+          molecule test
