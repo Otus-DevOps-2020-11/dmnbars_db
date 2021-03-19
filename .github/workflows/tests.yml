@@ -15,11 +15,9 @@ jobs:
           chmod +x vagrant &&
           echo $PATH
       - run: |
-          ls -la /home
+          mkdir -p /home/runner/.local/bin
       - run: |
-          ls -la /home/runner
-      - run: |
-          ls -la /home/runner/.local
+          ls -la /home/runner/.local/bin
       - run: |
           mv vagrant /home/runner/.local/bin/vagrant
       - name: install deps
