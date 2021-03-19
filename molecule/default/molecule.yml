@@ -4,7 +4,7 @@ dependency:
 driver:
   name: podman
 lint: |
-  yamllint
+  yamllint .
 platforms:
   - name: ubuntu
     image: ubuntu:20.04
