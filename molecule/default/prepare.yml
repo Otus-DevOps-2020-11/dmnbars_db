@@ -11,3 +11,4 @@
       loop:
         - gnupg
         - apt-transport-https
+        - apt-utils
