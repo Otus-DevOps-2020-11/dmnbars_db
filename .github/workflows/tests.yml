@@ -13,7 +13,10 @@ jobs:
           wget https://releases.hashicorp.com/vagrant/2.2.14/vagrant_2.2.14_linux_amd64.zip &&
           unzip vagrant_2.2.14_linux_amd64.zip &&
           chmod +x vagrant &&
-          echo $PATH &&
+          echo $PATH
+      - run: |
+          ls -la /home/runner/.local
+      - run: |
           mv vagrant /home/runner/.local/bin/vagrant
       - name: install deps
         run: |
