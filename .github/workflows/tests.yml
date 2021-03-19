@@ -6,6 +6,8 @@ on:
 jobs:
   molecule:
     runs-on: ubuntu-latest
+    env:
+      DO_API_TOKEN: ${{ secrets.DO_API_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - name: install deps
