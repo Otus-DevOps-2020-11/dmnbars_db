@@ -12,3 +12,4 @@
         - gnupg
         - apt-transport-https
         - apt-utils
+        - mongodb-org-server
