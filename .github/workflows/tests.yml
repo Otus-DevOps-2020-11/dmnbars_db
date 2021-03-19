@@ -8,13 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: install vagrant
-        run: |
-          wget https://releases.hashicorp.com/vagrant/2.2.14/vagrant_2.2.14_linux_amd64.zip &&
-          unzip vagrant_2.2.14_linux_amd64.zip &&
-          chmod +x vagrant &&
-          mkdir -p /home/runner/.local/bin &&
-          mv vagrant /home/runner/.local/bin/vagrant
+#      - name: install vagrant
+#        run: |
+#          wget https://releases.hashicorp.com/vagrant/2.2.14/vagrant_2.2.14_linux_amd64.zip &&
+#          unzip vagrant_2.2.14_linux_amd64.zip &&
+#          chmod +x vagrant &&
+#          mkdir -p /home/runner/.local/bin &&
+#          mv vagrant /home/runner/.local/bin/vagrant
       - name: install deps
         run: |
           python -m pip install -r requirements.txt

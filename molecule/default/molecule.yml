@@ -2,14 +2,12 @@
 dependency:
   name: galaxy
 driver:
-  name: vagrant
-  provider:
-    name: libvirt
+  name: docker
 lint: |
   yamllint .
 platforms:
   - name: instance
-    box: ubuntu/xenial64
+    image: ubuntu:20.04
 provisioner:
   name: ansible
   lint:

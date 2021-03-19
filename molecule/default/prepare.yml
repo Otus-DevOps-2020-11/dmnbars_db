@@ -3,10 +3,11 @@
   become: true
   hosts: all
   tasks:
-    - name: install deps
-      apt:
-        update_cache: true
-        name: "{{ item }}"
-        state: present
-      loop:
-        - gnupg
+    - debug: msg="hello"
+#    - name: install deps
+#      apt:
+#        update_cache: true
+#        name: "{{ item }}"
+#        state: present
+#      loop:
+#        - gnupg
