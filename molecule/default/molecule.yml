@@ -2,12 +2,12 @@
 dependency:
   name: galaxy
 driver:
-  name: podman
+  name: vagrant
 lint: |
   yamllint .
 platforms:
-  - name: ubuntu
-    image: ubuntu:20.04
+  - name: instance
+    box: ubuntu/xenial64
 provisioner:
   name: ansible
   lint:
